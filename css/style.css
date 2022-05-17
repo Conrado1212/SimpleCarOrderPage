@@ -3,6 +3,7 @@ body{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     margin: 0 0;
     padding: 0 0 ;
+
 }
 .conteiner{
     width:80%;
@@ -41,7 +42,11 @@ span{
 .menu ul li a{ 
    color: #292929;
    text-decoration: none;
+   font-weight: bolder;
  }
+ .menu ul li a:hover{ 
+    color: goldenrod;
+  }
 .clear{
     clear: both;
     float: none;
@@ -98,4 +103,50 @@ span{
 a{  
     color: white;
     text-decoration: none;
+}
+.footer{
+    text-align: center;
+    background-color: #222222;
+    color: white;
+}
+.inputek{
+    background-color: #292929;
+    
+}
+.car-search{
+    background-image: url(../img/back.png);
+    padding:6% 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+}
+.submit-btn{
+    width:10%;
+    padding: 10px 30px;
+    cursor: pointer;
+    display: inline;
+    margin: auto;
+    background: linear-gradient(to right, #000000, 	#808080);
+    border:0;
+    outline:none;
+    border-radius: 30px;
+    color:#fff;
+}
+.submit-btn:hover{
+    background: linear-gradient(to right, #808080, 	#000000);
+   
+}
+.input-field{
+    width:30%;
+    padding: 10px 0;
+    margin: 5px 0;
+    border-left: 0;
+    border-top:0;
+    border-right: 0;
+    border: 2px solid #999;
+    outline: none;
+    background: transparent;
+    transition: all 0.2s linear;
+    border-radius: 6px;
 }
