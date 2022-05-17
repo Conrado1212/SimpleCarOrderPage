@@ -11,3 +11,91 @@ body{
     margin-right: auto;
     padding: 1%;
 }
+.logo{
+    font-size: 13px;
+   text-align: left;
+   background-color:lightgrey;
+   border:  1px solid black;
+   width: 10%;
+   float: left;
+}
+span{
+    
+}
+.img-resp{
+   
+    width: 100%;
+}
+.menu{
+    text-align: right;
+    line-height: 30px;
+}
+.menu ul{
+    list-style-type: none;
+}
+
+.menu ul li{
+   display: inline;
+   padding: 1%;
+}
+.menu ul li a{ 
+   color: #292929;
+   text-decoration: none;
+ }
+.clear{
+    clear: both;
+    float: none;
+}
+.socialdiv{
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.fb{
+    width: 250px;
+    height: 155px;
+    float: left;
+
+}
+.fb:hover{
+    background-color: #4668b3;
+}
+.yt{
+    width: 250px;
+    height: 155px;
+    float: left;
+
+}
+.yt:hover{
+    background-color: #d94348;
+}
+.tw{
+    width: 250px;
+    height: 155px;
+    float: left;
+
+}
+.tw:hover{
+    background-color: #6441a5;
+}
+.am{
+    width: 250px;
+    height: 155px;
+    float: left;
+
+}
+.am:hover{
+    background-color: #e47911;
+}
+.social{
+    width: 80%;
+    text-align: center;
+    background-color: #292929;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1%;
+}
+a{  
+    color: white;
+    text-decoration: none;
+}
