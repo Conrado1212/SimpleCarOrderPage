@@ -171,6 +171,7 @@ h2{
     text-align: center;
     font-size: 28px;
     color:white;
+    margin-bottom: 2%;
 }
 .categories{
     background-image: url(../img/back.png);
@@ -244,4 +245,65 @@ h4{
     left: 0;
     top:0;
     z-index: 100;
+}
+
+/*mobile */
+@media only screen and (max-width:768px){
+    .logo{
+     
+       width: 60%;
+       float: none;
+      margin: 1% auto;
+    }
+    .menu ul{
+        list-style-type: none;
+        text-align: center;
+    }
+    .input-field{
+        width:50%;
+        margin-bottom: 5%;
+        padding: 5%;;
+    }
+    input:is(:focus, :valid) {
+        width: 90%;
+        margin-bottom: 5%;
+        padding: 2%;
+    }
+    .submit-btn{
+       width:40%;
+    }
+    .box{
+        width: 90%;
+        margin: 4% auto;
+    }
+    .categories{
+      padding: 20% 0;
+    }
+    h2{
+        margin-bottom: 5% auto;
+    }
+    h3{
+        margin-bottom: 5% auto;
+    }
+    h4{
+        margin-bottom: 5% auto;
+    }
+    .socialdiv{
+        width: 100%;
+        margin: 4% auto;
+        padding: 2%;
+    }
+    .footer{
+        width: 100%;
+    }
+    .menuCar{
+        padding: 10% 0;
+    }
+    .menuCar-box{
+       width:90%;
+      padding: 5%;
+      margin: 2%;
+      margin-bottom: 5% auto;
+    }
+  
 }
