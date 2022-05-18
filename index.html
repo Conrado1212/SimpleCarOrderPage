@@ -9,7 +9,7 @@
     <title>Car main page</title>
 </head>
 <body>
-    <section class="navbar">
+    <div class="nav">
     <nav>
         <div class="conteiner">
        <div class="logo">
@@ -46,7 +46,7 @@
        </div>
     </nav>
 </div>
-</section>
+</div>
 <section class="categories">
     <div class="conteiner">
         <h2 >Categories</h2>
@@ -169,5 +169,29 @@
         <div class="footer">ElectricOrderApp.com &copy; 2020 Thank you for your visit</div>
 </div>
 </section>
+<script src="jquery-1.11.3.min.js"></script>
+<script>
+
+    $(document).ready(function() {
+        var NavY = $('.nav').offset().top;
+
+        var stickyNav = function(){
+            var ScrollY = $(window).scrollTop();
+
+            if (ScrollY > NavY) {
+                $('.nav').addClass('sticky');
+            } else {
+                $('.nav').removeClass('sticky');
+            }
+        };
+
+        stickyNav();
+
+        $(window).scroll(function() {
+            stickyNav();
+        });
+    });
+
+</script>
 </body>
 </html>
