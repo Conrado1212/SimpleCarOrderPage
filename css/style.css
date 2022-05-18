@@ -206,8 +206,26 @@ h3{
     border: 1px solid black;
     padding: 2%;
     background-color: white;
+    border-radius: 10px;
 }
 .imgCar{
-    width: 40%;
+    width: 30%;
     float: left;
+}
+.desc{
+    width: 60%;
+    float: left;
+    margin-left: 10%;
+}
+.engine{
+    margin: 1% 0;
+    font-size: 14px;
+}
+.price{
+    margin: 1% 0;
+    font-size: 14px;
+    color: goldenrod;
+}
+h4{
+    font-size: 18px;
 }
