@@ -24,7 +24,6 @@ span{
     
 }
 .img-resp{
-   
     width: 100%;
 }
 .menu{
@@ -122,7 +121,7 @@ a{
     text-align: center;
 }
 .submit-btn{
-    width:10%;
+    width:7%;
     padding: 10px 30px;
     cursor: pointer;
     display: inline;
@@ -149,4 +148,40 @@ a{
     background: transparent;
     transition: all 0.2s linear;
     border-radius: 6px;
+}
+input:is(:focus, :valid) {
+    border-color: #666666;
+    color: black;
+    font-size: 12px;
+    font-weight: 600;
+    top: 0;
+}
+h2{
+    text-align: center;
+    font-size: 28px;
+}
+.categories{
+    padding: 4% 0;
+}
+.box{
+    border: 1px solid gray;
+    width: 30%;
+    display: inline;
+    float: left;
+    margin: 1%;
+    text-align: center;
+    position: relative;
+}
+h3{
+    position: absolute;
+    text-align: center;
+    bottom: 50px;
+    left: 40%;
+    top: 10px;
+    color: white;
+    font-size: 24px;
+    font-weight: bolder;
+}
+.img-curve{
+    border-radius: 15px;
 }
