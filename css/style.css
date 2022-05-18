@@ -5,9 +5,12 @@ body{
     padding: 0 0 ;
 
 }
+.navbar{
+    background-color:#999;
+}
 .conteiner{
     width:80%;
-    border: 1px solid gray;
+    
     margin-left: auto;
     margin-right: auto;
     padding: 1%;
@@ -22,9 +25,10 @@ body{
     font-size: 13px;
    text-align: left;
    background-color:lightgrey;
-   border:  1px solid black;
+   
    width: 10%;
    float: left;
+   border-radius: 10px;
 }
 span{
     
@@ -98,7 +102,7 @@ span{
     background-color: #e47911;
 }
 .social{
-    width: 80%;
+    width: 100%;
     text-align: center;
     background-color: #292929;
     margin-left: auto;
@@ -115,7 +119,7 @@ a{
     color: white;
 }
 .inputek{
-    background-color: #292929;
+    text-align: center;
     border-radius: 5px;
     
 }
@@ -150,14 +154,14 @@ a{
     border-left: 0;
     border-top:0;
     border-right: 0;
-    border: 2px solid #999;
+    border: 2px solid black;
     outline: none;
     background: transparent;
     transition: all 0.2s linear;
     border-radius: 6px;
 }
 input:is(:focus, :valid) {
-    border-color: #666666;
+    border-color: white;
     color: white;
     font-size: 12px;
     font-weight: 600;
@@ -166,9 +170,14 @@ input:is(:focus, :valid) {
 h2{
     text-align: center;
     font-size: 28px;
+    color:white;
 }
 .categories{
-    padding: 4% 0;
+    background-image: url(../img/back.png);
+    padding:6% 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 .box{
    
