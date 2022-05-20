@@ -1,8 +1,9 @@
 <?php include('part/menu.php'); ?>
+
 <section class="categories">
     <div class="conteiner">
         <div class="button-box">
-        <h2 class="submit-btn">Manage</h2>
+        <h2 class="submit-btn">Category</h2>
         </div>
         <a href="#">
         <div class="box">
@@ -28,5 +29,5 @@
         </div>
 </div>
 </section>
-<?php include('part/social.php'); ?>\
+<?php include('part/social.php'); ?>
 <?php include('part/footer.php'); ?>

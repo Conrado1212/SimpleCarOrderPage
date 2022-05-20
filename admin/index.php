@@ -31,56 +31,6 @@
 </section>
 
 
-<section class="Social">
-    <div class="social">
-  
-        <div class="socialdiv">
-            <div class="fb">
-              <a href=" https://www.facebook.com/"><i class="icon-facebook-squared"></i></a>
-            </div>
-            <div class="yt">
-                <a href="https://www.youtube.com/"><i class="icon-youtube-play"></i></a>
-            </div>
-            <div class="tw">
-                <a href="https://www.twitch.tv/"><i class="icon-twitch"></i></a>
-            </div>
-            <div class="am">
-               <a href="https://www.amazon.de/"><i class="icon-amazon" ></i></a>
 
-            </div>
-            <div style="clear: both"> </div>
-        </div>
-   
-</div>
-</section>
-<section class="Footer">
-    <div class="conteiner">
-        <div class="footer">ElectricOrderApp.com &copy; 2022 Thank you for your visit</div>
-</div>
-</section>
-<script src="jquery-1.11.3.min.js"></script>
-<script>
-
-    $(document).ready(function() {
-        var NavY = $('.nav').offset().top;
-
-        var stickyNav = function(){
-            var ScrollY = $(window).scrollTop();
-
-            if (ScrollY > NavY) {
-                $('.nav').addClass('sticky');
-            } else {
-                $('.nav').removeClass('sticky');
-            }
-        };
-
-        stickyNav();
-
-        $(window).scroll(function() {
-            stickyNav();
-        });
-    });
-
-</script>
-</body>
-</html>
+<?php include('part/social.php'); ?>
+<?php include('part/footer.php'); ?>

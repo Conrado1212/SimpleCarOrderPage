@@ -20,19 +20,19 @@
        
             <ul>
                 <li>
-                    <a href="index.html">Home</a>
+                    <a href="index.php">Home</a>
                 </li>
                 <li>
-                    <a href="types.html">Admin</a>
+                    <a href="manage.php">Admin</a>
                 </li>
                 <li>
-                    <a href="cars.html">Category</a>
+                    <a href="category.php">Category</a>
                 </li>
                 <li>
-                    <a href="cars.html">Cars</a>
+                    <a href="cars.php">Cars</a>
                 </li>
                 <li>
-                    <a href="buy.html">Buy</a>
+                    <a href="buy.php">Buy</a>
                 </li>
             </ul>
        </div>
