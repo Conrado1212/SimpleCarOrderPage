@@ -36,8 +36,9 @@ span{
     width: 100%;
 }
 .menu{
-    text-align: right;
+    text-align: center;
     line-height: 30px;
+    font-size: 24px;
 }
 .menu ul{
     list-style-type: none;
