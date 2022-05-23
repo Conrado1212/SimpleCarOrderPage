@@ -55,8 +55,8 @@
                         <td><?php echo $phone; ?></td>
                         <td><?php echo $address; ?></td>
                         <td>
-                          <a href="#" class="submit-btn2"> Update Click</a>
-                          <a href="#" class="submit-btn3"> Delete Click</a>
+                          <a href="updateAdmin.php" class="submit-btn2"> Update Click</a>
+                          <a href="deleteAdmin.php" class="submit-btn3"> Delete Click</a>
                         </td>
                     </tr>
                     </tbody>
