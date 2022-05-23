@@ -6,7 +6,14 @@
         <h2 class="submit-btn">AddAdmin</h2>
         </div>
         
-        <form action="#" method="POST" class="input-group">
+        <?php
+          if(isset($_SESSION['add'])){
+            echo $_SESSION['add'];  
+            unset($_SESSION['add']); //remove session
+          }
+        ?>
+
+        <form action="" method="POST" class="input-group">
               <input type="text" class="input-field" name="userName" placeholder="Your userName" required>
               <input type="password" class="input-field" name="password" placeholder="Your password" required>
               <input type="text" class="input-field" name="fullName" placeholder="Your fullName" required>
@@ -39,11 +46,21 @@ if(isset($_POST['submit'])){
     fullName = '$fullName',
     email = '$email',
     phone = '$phone',
-    address = '$address' ";
+    address = '$address' 
+    ";
 
-    $conn = mysqli_connect('localhost', 'root', '') or die(mysqli_error());  //con to database
-    $db_select = mysqli_select_db($conn,'cars') or die(mysqli_error()); //name database
-    $res = mysqli_query($conn, $sql) or die(mysqli_error());
+    
+    $res = mysqli_query($conn, $sql) or die(mysqli_error()); //save data in database
+
+    if($res==TRUE){
+        $_SESSION['add'] = 'Added successfully';
+
+        header("location:".URL.'admin/manage.php');
+    }else{
+        $_SESSION['add'] = 'Added failed';
+
+        header("location:".URL.'admin/addAdmin.php');
+    }
 
 }
 ?>

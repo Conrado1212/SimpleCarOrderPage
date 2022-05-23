@@ -58,7 +58,7 @@
                         <td>dasgdfthgjkhljk</td>
                         <td>
                         <a href="#" class="submit-btn2"> Update car</a>
-                        <a href="#" class="submit-btn3"> Delete create_function</a>
+                        <a href="#" class="submit-btn3"> Delete car</a>
                         </td>
                     </tr>
                 </tbody>

@@ -4,6 +4,14 @@
         <div class="button-box">
         <h2 class="submit-btn">Manage</h2>
         </div>
+        <?php
+          if(isset($_SESSION['add'])){
+            echo $_SESSION['add'];  
+            unset($_SESSION['add']); //remove session
+          }
+        ?>
+        </br>
+        </br>
         <a href="addAdmin.php" class="submit-btn">Add Admin</a>
         <div class="form-box2">
         <table class="button-box2">
@@ -11,7 +19,6 @@
                 <tr>
                     <th>userId</th>
                     <th>userName</th>
-                    <th>password</th>
                     <th>fullName</th>
                     <th>email</th>
                     <th>phone</th>
@@ -19,48 +26,52 @@
                     <th>Action</th>
                 </tr>
                 </thead>
-                <tbody>
+               
+                <?php
+                  $sql = "SELECT * FROM user";
 
-                    <tr class="active-row">
-                        <td>1</td>
-                        <td>xd</td>
-                        <td>12132434</td>
-                        <td>132435454565</td>
-                        <td>@</td>
-                        <td>9999000000</td>
-                        <td>dasgdfthgjkhljk</td>
+                  $res = mysqli_query($conn, $sql) or die(mysqli_error()); //save data in database
+
+                  if($res==TRUE){
+                    $rows = mysqli_num_rows($res);
+
+                    if($rows>0){
+                        while($rows=mysqli_fetch_assoc($res)){
+                          $userId=$rows['userId'];
+                          $userName=$rows['userName'];
+                          $fullName=$rows['fullName'];
+                          $email=$rows['email'];
+                          $phone=$rows['phone'];
+                          $address=$rows['address'];
+
+
+                       ?>
+                      <tbody>
+                      <tr class="active-row">
+                      <td><?php echo $userId; ?></td>
+                        <td><?php echo $userName; ?></td>
+                        <td><?php echo $fullName; ?></td>
+                        <td><?php echo $email; ?></td>
+                        <td><?php echo $phone; ?></td>
+                        <td><?php echo $address; ?></td>
                         <td>
-                        <a href="#" class="submit-btn2"> Update Click</a>
-                        <a href="#" class="submit-btn3"> Delete Click</a>
+                          <a href="#" class="submit-btn2"> Update Click</a>
+                          <a href="#" class="submit-btn3"> Delete Click</a>
                         </td>
                     </tr>
-                    <tr class="active-row">
-                        <td>2</td>
-                        <td>xd</td>
-                        <td>12132434</td>
-                        <td>132435454565</td>
-                        <td>@</td>
-                        <td>9999000000</td>
-                        <td>dasgdfthgjkhljk</td>
-                        <td>
-                        <a href="#" class="submit-btn2"> Update Click</a>
-                        <a href="#" class="submit-btn3"> Delete Click</a>
-                        </td>
-                    </tr>
-                    <tr class="active-row">
-                        <td>3</td>
-                        <td>xd</td>
-                        <td>12132434</td>
-                        <td>132435454565</td>
-                        <td>@</td>
-                        <td>9999000000</td>
-                        <td>dasgdfthgjkhljk</td>
-                        <td>
-                        <a href="#" class="submit-btn2"> Update Click</a>
-                        <a href="#" class="submit-btn3"> Delete Click</a>
-                        </td>
-                    </tr>
-                </tbody>
+                    </tbody>
+                       <?php
+                        }
+                    }else{
+
+                    }
+                }else{
+                   
+                }
+
+                 ?>
+
+               
             </table>
             </div>
         <div class="clear">
