@@ -1,31 +1,70 @@
 <?php include('part/menu.php'); ?>
 
 <section class="categories">
-    <div class="conteiner">
+<div class="conteiner">
         <div class="button-box">
-        <h2 class="submit-btn">Cars</h2>
+        <h2 class="submit-btn">Your cars</h2>
         </div>
-        <a href="#">
-        <div class="box">
-            <img src="../img/hachback.png" alt="hachback" class="img-resp img-curve">
-            <h3>Hachback</h3>
-        </div>
-         </a>
-         <a href="#">
-        <div class="box">
-            <img src="../img/coupe.png" alt="coupe" class="img-resp img-curve">
-            <h3>Coupe</h3>
-        </div>
-         </a>
-         <a href="#">
-        <div class="box">
-            <img src="../img/sedan.png"  alt="sedan" class="img-resp img-curve">
-            <h3>Sedan</h3>
-        </div>
+        <a href="#" class="submit-btn">Add car</a>
+        <div class="form-box2">
+        <table class="button-box2">
+                <thead>
+                <tr>
+                    <th>userId</th>
+                    <th>userName</th>
+                    <th>password</th>
+                    <th>fullName</th>
+                    <th>email</th>
+                    <th>phone</th>
+                    <th>Address</th>
+                    <th>Action</th>
+                </tr>
+                </thead>
+                <tbody>
 
-    </a>
+                    <tr class="active-row">
+                        <td>1</td>
+                        <td>xd</td>
+                        <td>12132434</td>
+                        <td>132435454565</td>
+                        <td>@</td>
+                        <td>9999000000</td>
+                        <td>dasgdfthgjkhljk</td>
+                        <td>
+                        <a href="#" class="submit-btn2"> Update Click</a>
+                        <a href="#" class="submit-btn3"> Delete Click</a>
+                        </td>
+                    </tr>
+                    <tr class="active-row">
+                        <td>2</td>
+                        <td>xd</td>
+                        <td>12132434</td>
+                        <td>132435454565</td>
+                        <td>@</td>
+                        <td>9999000000</td>
+                        <td>dasgdfthgjkhljk</td>
+                        <td>
+                        <a href="#" class="submit-btn2"> Update Click</a>
+                        <a href="#" class="submit-btn3"> Delete Click</a>
+                        </td>
+                    </tr>
+                    <tr class="active-row">
+                        <td>3</td>
+                        <td>xd</td>
+                        <td>12132434</td>
+                        <td>132435454565</td>
+                        <td>@</td>
+                        <td>9999000000</td>
+                        <td>dasgdfthgjkhljk</td>
+                        <td>
+                        <a href="#" class="submit-btn2"> Update Click</a>
+                        <a href="#" class="submit-btn3"> Delete Click</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            </div>
         <div class="clear">
-
         </div>
 </div>
 </section>

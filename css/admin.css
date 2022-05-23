@@ -147,6 +147,36 @@ a{
     background: linear-gradient(to right, #808080, 	#000000);
    
 }
+.submit-btn2{
+    padding: 10px 30px;
+    cursor: pointer;
+    display: inline;
+    margin: auto;
+    background: linear-gradient(to right, goldenrod, 	#808080);
+    border:0;
+    outline:none;
+    border-radius: 30px;
+    color:#fff;
+}
+.submit-btn2:hover{
+    background: linear-gradient(to right, #808080, 	goldenrod);
+   
+}
+.submit-btn3{
+    padding: 10px 30px;
+    cursor: pointer;
+    display: inline;
+    margin: auto;
+    background: linear-gradient(to right, #000000, 	red);
+    border:0;
+    outline:none;
+    border-radius: 30px;
+    color:#fff;
+}
+.submit-btn3:hover{
+    background: linear-gradient(to right, red, #000000);
+   
+}
 .input-field{
     width:40%;
     padding: 10px 0;
@@ -261,6 +291,16 @@ h4{
     border: 1px solid  black;
     border-radius: 10px;
 }
+
+.form-box2{
+    width: 80%;
+    margin: 1% auto;
+    background: #C0C0C0;
+    padding: 5px;
+    overflow:hidden;
+    border: 1px solid  black;
+    border-radius: 10px;
+}
 .button-box{
     text-align: center;
     margin-top: 1%;
@@ -270,10 +310,50 @@ fieldset{
     margin-top: 2%;;
     padding: 5% 0;
 }
+
+.button-box2{
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.2em;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    width: 100%;
+}
+
+.button-box2 thead tr{
+    background-color: #808080;
+    color: #ffffff;
+    text-align: left;
+    font-weight: bold;
+}
+
+.button-box2 th,
+.button-box2 td {
+    padding: 12px 15px;
+}
+
+.button-box2 tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.button-box2 tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.button-box2 tbody tr:last-of-type {
+    border-bottom: 2px solid #808080;
+}
+
+.button-box2 tbody tr.active-row {
+    font-weight: bold;
+    color: #808080;
+}
+
 /*mobile */
 @media only screen and (max-width:768px){
     .logo{
-     
        width: 60%;
        float: none;
       margin: 1% auto;
