@@ -31,8 +31,8 @@
                         <td>9999000000</td>
                         <td>dasgdfthgjkhljk</td>
                         <td>
-                        <a href="#" class="submit-btn2"> Update Click</a>
-                        <a href="#" class="submit-btn3"> Delete Click</a>
+                        <a href="#" class="submit-btn2"> Update car</a>
+                        <a href="#" class="submit-btn3"> Delete car</a>
                         </td>
                     </tr>
                     <tr class="active-row">
@@ -44,8 +44,8 @@
                         <td>9999000000</td>
                         <td>dasgdfthgjkhljk</td>
                         <td>
-                        <a href="#" class="submit-btn2"> Update Click</a>
-                        <a href="#" class="submit-btn3"> Delete Click</a>
+                        <a href="#" class="submit-btn2"> Update car</a>
+                        <a href="#" class="submit-btn3"> Delete car</a>
                         </td>
                     </tr>
                     <tr class="active-row">
@@ -57,8 +57,8 @@
                         <td>9999000000</td>
                         <td>dasgdfthgjkhljk</td>
                         <td>
-                        <a href="#" class="submit-btn2"> Update Click</a>
-                        <a href="#" class="submit-btn3"> Delete Click</a>
+                        <a href="#" class="submit-btn2"> Update car</a>
+                        <a href="#" class="submit-btn3"> Delete create_function</a>
                         </td>
                     </tr>
                 </tbody>

@@ -4,7 +4,7 @@
         <div class="button-box">
         <h2 class="submit-btn">Manage</h2>
         </div>
-        <a href="#" class="submit-btn">Add Admin</a>
+        <a href="addAdmin.php" class="submit-btn">Add Admin</a>
         <div class="form-box2">
         <table class="button-box2">
                 <thead>

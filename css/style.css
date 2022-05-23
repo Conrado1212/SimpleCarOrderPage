@@ -147,7 +147,7 @@ a{
    
 }
 .input-field{
-    width:40%;
+    width:50%;
     padding: 10px 0;
     margin: 5px 0;
     border-left: 0;
@@ -272,7 +272,6 @@ fieldset{
 /*mobile */
 @media only screen and (max-width:768px){
     .logo{
-     
        width: 60%;
        float: none;
       margin: 1% auto;
