@@ -3,7 +3,7 @@
     <div class="conteiner">
         <div class="form-box2">
         <div class="button-box">
-        <h2 class="submit-btn">UpdateAdmin</h2>
+        <h2 class="submit-btn2">UpdateAdmin</h2>
         </div>
         
         <?php
@@ -48,7 +48,7 @@ if(isset($_SESSION['upd'])){
               <input type="email" class="input-field" name="email" value="<?php echo $email;?>" placeholder="Your email" required>
               <input type="tel" class="input-field" name="phone" value="<?php echo $phone;?>" placeholder="Your phone" required>
               <textarea type="address" class="input-field" name="address" value="<?php echo $address;?>" placeholder="Your address" required></textarea><br>
-              <button type="submit" name="submit" value="upd admin" class="submit-btn">Update admin</button>
+              <button type="submit" name="submit" value="upd admin" class="submit-btn2">Update admin</button>
 
         </form>
             </div>
