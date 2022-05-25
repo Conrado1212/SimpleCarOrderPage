@@ -69,6 +69,7 @@
                         <td><?php echo $phone; ?></td>
                         <td><?php echo $address; ?></td>
                         <td>
+                        <a href="changePassword.php?userId=<?php echo $userId;?>" class="submit-btn4"> Change password</a>
                           <a href="updateAdmin.php?userId=<?php echo $userId;?>" class="submit-btn2"> Update Click</a>
                           <a href="deleteAdmin.php?userId=<?php echo $userId;?>" class="submit-btn3"> Delete Click</a>
                         </td>
