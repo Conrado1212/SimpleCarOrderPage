@@ -7,6 +7,13 @@
         </div>
         
         <?php
+
+if(isset($_SESSION['upd'])){
+    echo $_SESSION['upd'];  
+    unset($_SESSION['upd']); //remove session
+  }
+
+
                 $userId = $_GET['userId'];
 
                 $sql ="SELECT * from user ";
@@ -71,14 +78,15 @@ if(isset($_POST['submit'])){
     ";
 
 
-$res = mysqli_query($conn, $sql) or die(mysqli_error()); //save data in database
+   
+$res = mysqli_query($conn, $sql); //save data in database
 
 if($res==TRUE){
-    $_SESSION['upd'] = '<div class="submit-btn2">Upd successfully</div>';
+    $_SESSION['upd'] = '<div class="submit-btn2">Upd successfully </div>';
 
     header("location:".URL.'admin/manage.php');
 }else{
-    $_SESSION['upd'] = '<div class="submit-btn2">Upd fialed</div>';
+    $_SESSION['upd'] = '<div class="submit-btn2">Upd failed</div>';
 
     header("location:".URL.'admin/updateAdmin.php');
 }
