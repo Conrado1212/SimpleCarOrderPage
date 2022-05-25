@@ -30,7 +30,6 @@
                   
                 }else{
                    
-            
                     header("location:".URL.'admin/manage.php');
                 }
         ?>
