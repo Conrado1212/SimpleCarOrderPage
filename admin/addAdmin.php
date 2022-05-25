@@ -53,11 +53,11 @@ if(isset($_POST['submit'])){
     $res = mysqli_query($conn, $sql) or die(mysqli_error()); //save data in database
 
     if($res==TRUE){
-        $_SESSION['add'] = 'Added successfully';
+        $_SESSION['add'] = '<div class="submit-btn">Added successfully</div>';
 
         header("location:".URL.'admin/manage.php');
     }else{
-        $_SESSION['add'] = 'Added failed';
+        $_SESSION['add'] = '<div class="submit-btn">Added fialed</div>';
 
         header("location:".URL.'admin/addAdmin.php');
     }

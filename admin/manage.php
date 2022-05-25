@@ -9,7 +9,15 @@
             echo $_SESSION['add'];  
             unset($_SESSION['add']); //remove session
           }
+
+
+          if(isset($_SESSION['del'])){
+            echo $_SESSION['del'];  
+            unset($_SESSION['del']); //remove session
+          }
         ?>
+        </br>
+        </br>
         </br>
         </br>
         <a href="addAdmin.php" class="submit-btn">Add Admin</a>
@@ -56,7 +64,7 @@
                         <td><?php echo $address; ?></td>
                         <td>
                           <a href="updateAdmin.php" class="submit-btn2"> Update Click</a>
-                          <a href="deleteAdmin.php" class="submit-btn3"> Delete Click</a>
+                          <a href="deleteAdmin.php?userId=<?php echo $userId;?>" class="submit-btn3"> Delete Click</a>
                         </td>
                     </tr>
                     </tbody>
