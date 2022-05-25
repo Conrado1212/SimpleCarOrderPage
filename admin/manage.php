@@ -15,6 +15,12 @@
             echo $_SESSION['del'];  
             unset($_SESSION['del']); //remove session
           }
+
+
+          if(isset($_SESSION['upd'])){
+            echo $_SESSION['upd'];  
+            unset($_SESSION['upd']); //remove session
+          }
         ?>
         </br>
         </br>
@@ -63,7 +69,7 @@
                         <td><?php echo $phone; ?></td>
                         <td><?php echo $address; ?></td>
                         <td>
-                          <a href="updateAdmin.php" class="submit-btn2"> Update Click</a>
+                          <a href="updateAdmin.php?userId=<?php echo $userId;?>" class="submit-btn2"> Update Click</a>
                           <a href="deleteAdmin.php?userId=<?php echo $userId;?>" class="submit-btn3"> Delete Click</a>
                         </td>
                     </tr>
