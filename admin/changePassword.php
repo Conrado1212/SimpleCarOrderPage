@@ -37,47 +37,44 @@ if(isset($_POST['submit'])){
     
     $sql ="SELECT * from user where userId=$userId and password='$oldPassword'";
    
-$res = mysqli_query($conn, $sql); //save data in database
+    $res = mysqli_query($conn, $sql); //save data in database
 
-if($res==TRUE){
-
-
-    $rows = mysqli_num_rows($res);
+    if($res==TRUE){
 
 
-    if($rows==1){
+        $rows = mysqli_num_rows($res);
+
+
+        if($rows==1){
         
 
-        if($newPassword == $ConPassword){
-            $sql2 ="UPDATE user set 
-            password='$newPassword'
-            where useriId='$userId
-            ";
+            if($newPassword == $ConPassword){
+                 
+                 $sql2 = "UPDATE user set 
+                password='$newPassword'
+                where useriId='$userId'
+                 ";
+                $res2 = mysqli_query($conn, $sql2); //save data in database
+                if($res2==TRUE){
+                    $_SESSION['change'] = '<div class="submit-btn4">Change correct</div>';
 
+                    header("location:".URL.'admin/manage.php');
+                }else{
+                    $_SESSION['change'] = '<div class="submit-btn4">Change failed</div>';
 
-            $res2 = mysqli_query($conn, $sql2); //save data in database
-
-            if($res==TRUE){
-                $_SESSION['change'] = '<div class="submit-btn4">Change success</div>';
-                header("location:".URL.'admin/manage.php');
+                    header("location:".URL.'admin/manage.php');
+                }
+                
             }else{
-                $_SESSION['change'] = '<div class="submit-btn4">Change failed</div>';
-                 header("location:".URL.'admin/manage.php');
+            $_SESSION['pass-Incorrect'] = '<div class="submit-btn4">Incorrect password</div>';
+
+            header("location:".URL.'admin/manage.php');
             }
-
         }else{
-            $_SESSION['change'] = '<div class="submit-btn4">Change failed wrong password</div>';
-        header("location:".URL.'admin/manage.php');
+            $_SESSION['not-found'] = '<div class="submit-btn4">Not found user </div>';
+
+            header("location:".URL.'admin/manage.php');
         }
-
-        $_SESSION['change'] = '<div class="submit-btn4">Change success</div>';
-        header("location:".URL.'admin/manage.php');
-
-    }else{
-
-        $_SESSION['change'] = '<div class="submit-btn4">Change failed</div>';
-        header("location:".URL.'admin/manage.php');
     }
 }
-
 ?>

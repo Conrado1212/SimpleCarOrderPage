@@ -26,6 +26,16 @@
             echo $_SESSION['change'];  
             unset($_SESSION['change']); //remove session
           }
+
+          if(isset($_SESSION['not-found'])){
+            echo $_SESSION['not-found'];  
+            unset($_SESSION['not-found']); //remove session
+          }
+
+          if(isset($_SESSION['pass-Incorrect'])){
+            echo $_SESSION['pass-Incorrect'];  
+            unset($_SESSION['pass-Incorrect']); //remove session
+          }
         ?>
         </br>
         </br>
