@@ -7,25 +7,9 @@
         </div>
         
         <?php
-                $userId = $_GET['userId'];
+                if(isset($_GET['userID'])){
+                    $userId = $_GET['userId'];
 
-                $sql ="SELECT * from user ";
-
-                $res = mysqli_query($conn, $sql);
-
-
-                if($res==TRUE){
-
-                    $rows = mysqli_num_rows($res);
-                    if($rows==1){
-                        $rows= mysqli_fetch_assoc($res);
-
-                        $password =$rows['password'];
-                    }
-                  
-                }else{
-                   
-                    header("location:".URL.'admin/manage.php');
                 }
         ?>
 
@@ -46,28 +30,54 @@
 <?php
 if(isset($_POST['submit'])){
     $oldPassword=md5($_POST['oldPassword']); //encrypting password
- 
-
-    $sql ="UPDATE  user set
-    password = '$password'
-    where userid='$userId'
-    ";
+    $newPassword=md5($_POST['newPassword']);
+    $ConPassword=md5($_POST['ConPassword']);
 
 
+    
+    $sql ="SELECT * from user where userId=$userId and password='$oldPassword'";
    
 $res = mysqli_query($conn, $sql); //save data in database
 
 if($res==TRUE){
-    $_SESSION['change'] = '<div class="submit-btn4">Change successfully </div>';
-
-    header("location:".URL.'admin/manage.php');
-}else{
-    $_SESSION['change'] = '<div class="submit-btn4">Change failed</div>';
-
-    header("location:".URL.'admin/updateAdmin.php');
-}
 
 
+    $rows = mysqli_num_rows($res);
+
+
+    if($rows==1){
+        
+
+        if($newPassword == $ConPassword){
+            $sql2 ="UPDATE user set 
+            password='$newPassword'
+            where useriId='$userId
+            ";
+
+
+            $res2 = mysqli_query($conn, $sql2); //save data in database
+
+            if($res==TRUE){
+                $_SESSION['change'] = '<div class="submit-btn4">Change success</div>';
+                header("location:".URL.'admin/manage.php');
+            }else{
+                $_SESSION['change'] = '<div class="submit-btn4">Change failed</div>';
+                 header("location:".URL.'admin/manage.php');
+            }
+
+        }else{
+            $_SESSION['change'] = '<div class="submit-btn4">Change failed wrong password</div>';
+        header("location:".URL.'admin/manage.php');
+        }
+
+        $_SESSION['change'] = '<div class="submit-btn4">Change success</div>';
+        header("location:".URL.'admin/manage.php');
+
+    }else{
+
+        $_SESSION['change'] = '<div class="submit-btn4">Change failed</div>';
+        header("location:".URL.'admin/manage.php');
+    }
 }
 
 ?>

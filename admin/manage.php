@@ -21,6 +21,11 @@
             echo $_SESSION['upd'];  
             unset($_SESSION['upd']); //remove session
           }
+
+          if(isset($_SESSION['change'])){
+            echo $_SESSION['change'];  
+            unset($_SESSION['change']); //remove session
+          }
         ?>
         </br>
         </br>
