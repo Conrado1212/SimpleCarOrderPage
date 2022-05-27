@@ -1,3 +1,4 @@
+<?php include('../config/configuration.php'); ?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -29,11 +30,16 @@
         <div class="button-box">
         <h2 class="submit-btn">Login</h2>
         </div>
-        
+        <?php
+          if(isset($_SESSION['login'])){
+            echo $_SESSION['login'];  
+            unset($_SESSION['login']); //remove session
+          }
+          ?>
         <form action="" method="POST" class="input-group">
         </br><input type="text" class="input-field" name="userName"  placeholder="Your userName" >
              <input type="password" class="input-field" name="password"  placeholder="Your password" ></br></br>
-              <button type="submit" name="submit" value="change password" class="submit-btn">Log in</button>
+              <button type="submit" name="submit" value="login" class="submit-btn">Log in</button>
 
         </form>
             </div>
@@ -46,3 +52,32 @@
 <?php include('part/social.php'); ?>
 <?php include('part/footer.php'); ?>
 <?php
+if(isset($_POST['submit'])){
+    $userName=$_POST['userName']; 
+    $password=md5($_POST['password']); 
+
+
+    $sql ="SELECT * from  user 
+    where userName='$userName' and password='$password'
+    ";
+
+    
+    $res = mysqli_query($conn, $sql);
+
+    $rows = mysqli_num_rows($res);
+
+    if($rows==1){
+        
+        $_SESSION['login'] = '<div class="submit-btn">Login successfully </div>';
+
+        header("location:".URL.'admin/');
+    }else{
+
+        $_SESSION['login'] = '<div class="submit-btn">Login failed </div>';
+
+        header("location:".URL.'admin/login.php');
+
+    }
+
+}
+?>

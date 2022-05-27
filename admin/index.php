@@ -5,6 +5,13 @@
         <div class="button-box">
         <h2 class="submit-btn">Your dashboard</h2>
         </div>
+        <?php
+          if(isset($_SESSION['login'])){
+            echo $_SESSION['login'];  
+            unset($_SESSION['login']); //remove session
+          }
+          ?>
+          </br>
         <a href="#">
         <div class="box">
             <img src="../img/hachback.png" alt="hachback" class="img-resp img-curve">
