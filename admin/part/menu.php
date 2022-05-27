@@ -1,4 +1,5 @@
 <?php include('../config/configuration.php'); ?>
+<?php include('loginCheck.php'); ?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">

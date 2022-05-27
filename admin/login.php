@@ -35,6 +35,11 @@
             echo $_SESSION['login'];  
             unset($_SESSION['login']); //remove session
           }
+
+          if(isset($_SESSION['loginCheck'])){
+            echo $_SESSION['loginCheck'];  
+            unset($_SESSION['loginCheck']); //remove session
+          }
           ?>
         <form action="" method="POST" class="input-group">
         </br><input type="text" class="input-field" name="userName"  placeholder="Your userName" >
@@ -69,6 +74,9 @@ if(isset($_POST['submit'])){
     if($rows==1){
         
         $_SESSION['login'] = '<div class="submit-btn">Login successfully </div>';
+
+        $_SESSION['user'] = $userName; //check log in or log out
+
 
         header("location:".URL.'admin/');
     }else{
