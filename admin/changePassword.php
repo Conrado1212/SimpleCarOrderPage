@@ -60,7 +60,7 @@ if(isset($_POST['submit'])){
 
                     header("location:".URL.'admin/manage.php');
                 }else{
-                    $_SESSION['change'] = '<div class="submit-btn4">Change failed</div>';
+                    $_SESSION['change'] = '<div class="submit-btn4">Change correct</div>';
 
                     header("location:".URL.'admin/manage.php');
                 }
