@@ -35,6 +35,9 @@
                 <li>
                     <a href="buy.php">Buy</a>
                 </li>
+                <li>
+                    <a href="logOut.php">Log out</a>
+                </li>
             </ul>
        </div>
        
