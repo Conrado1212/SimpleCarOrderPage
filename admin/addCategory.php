@@ -14,7 +14,7 @@
         ?>
 
         <form action="" method="POST" class="input-group" enctype="multipart/form-data">
-              <input type="text" class="input-field" name="title" placeholder="Your title" required>
+              <input type="text" class="input-field" name="title" value="title" placeholder="Your title" required>
               <input type="file" class="input-field" name="name"  >
               <h2 > Featured</h2><input type="radio"  name="featured" values="YES" >Yes
               <input type="radio"  name="featured" values="No" >No 
@@ -54,23 +54,29 @@ if(isset($_POST['submit'])){
 
     $name=$_FILES['name']['name'];
 
+    if($name!=""){
 
-    $rename = end(explode('.', $name));
+    
 
 
-    $name = "Car_category".rand(000, 999).'.'.$rename;
+            $rename = end(explode('.', $name));
 
-    $source_path = $_FILES['name']['tmp_name'];
 
-    $destination_path ="../img/category/".$name;
+            $name = "Car_category".rand(000, 999).'.'.$rename;
 
-    $upload = move_uploaded_file($source_path, $destination_path);
+            $source_path = $_FILES['name']['tmp_name'];
 
-    if($upload == false){
-        $_SESSION['upload'] = '<div class="submit-btn">Upload failed</div>';
-        header("location:".URL.'admin/addCategory.php');
+            $destination_path ="../img/category/".$name;
 
-        die();
+            $upload = move_uploaded_file($source_path, $destination_path);
+
+            if($upload == false){
+                $_SESSION['upload'] = '<div class="submit-btn">Upload failed</div>';
+                header("location:".URL.'admin/addCategory.php');
+
+                die();
+            }
+}
     }else{
         $_SESSION['upload'] = '<div class="submit-btn">Upload successfully</div>';
         header("location:".URL.'admin/category.php');

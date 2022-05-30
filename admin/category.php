@@ -20,6 +20,16 @@
             echo $_SESSION['delCat'];  
             unset($_SESSION['delCat']); //remove session
           }
+
+          if(isset($_SESSION['delImg'])){
+            echo $_SESSION['delImg'];  
+            unset($_SESSION['delImg']); //remove session
+          }
+
+          if(isset($_SESSION['updCat'])){
+            echo $_SESSION['updCat'];  
+            unset($_SESSION['updCat']); //remove session
+          }
         ?>
         </br>
         </br>
@@ -33,9 +43,9 @@
                     <th>categoryId</th>
                     <th>title</th>
                     <th>name</th>
-                    <th>fullName</th>
                     <th>featured</th>
                     <th>active</th>
+                    <th>action</th>
                 </tr>
                 </thead>
                 <?php
