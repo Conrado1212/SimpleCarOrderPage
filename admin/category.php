@@ -11,6 +11,10 @@
             unset($_SESSION['addCat']); //remove session
           }
 
+          if(isset($_SESSION['upload'])){
+            echo $_SESSION['upload'];  
+            unset($_SESSION['upload']); //remove session
+          }
 
           if(isset($_SESSION['delCat'])){
             echo $_SESSION['delCat'];  

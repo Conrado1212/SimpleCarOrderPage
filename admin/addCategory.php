@@ -13,9 +13,9 @@
           }
         ?>
 
-        <form action="" method="POST" class="input-group">
+        <form action="" method="POST" class="input-group" enctype="multipart/formData">
               <input type="text" class="input-field" name="title" placeholder="Your title" required>
-              <input type="text" class="input-field" name="name" placeholder="Your name" required>
+              <input type="file" class="input-field" name="name" placeholder="Your name" required>
               <h2 > Featured</h2><input type="radio"  name="featured" values="YES" >Yes
               <input type="radio"  name="featured" values="No" >No 
               <h2 > Active</h2><input type="radio"  name="active" values="YES" >Yes
@@ -33,7 +33,7 @@
 <?php
 if(isset($_POST['submit'])){
     $title=$_POST['title'];
-    $name=$_POST['name'];
+    
 
 
     if(isset($_POST['featured'])){
@@ -50,7 +50,36 @@ if(isset($_POST['submit'])){
         $active="No";
     }
     
+   if(isset($_FILES['name']['name'])){
 
+    $name=$_FILES['name']['name'];
+
+
+    $rename = end(explode('.', $name));
+
+
+    $name = "Car_category".rand(000, 999).'.'$rename;
+
+    $source_path = $_FILES['name']['tmp_name'];
+
+    $destination_path ="../img".$name;
+
+    $upload = move_uploaded_file($source_path, $destination_path);
+
+    if($upload == false){
+        $_SESSION['upload'] = '<div class="submit-btn">Upload failed</div>';
+        header("location:".URL.'admin/addCategory.php');
+
+        die();
+    }else{
+        $_SESSION['upload'] = '<div class="submit-btn">Upload successfully</div>';
+        header("location:".URL.'admin/category.php');
+    }
+
+   }else{
+        $name="";
+
+   }
 
     $sql ="INSERT INTO category set
     title='$title',
