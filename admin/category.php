@@ -30,6 +30,16 @@
             echo $_SESSION['updCat'];  
             unset($_SESSION['updCat']); //remove session
           }
+
+          if(isset($_SESSION['uploadUpd'])){
+            echo $_SESSION['uploadUpd'];  
+            unset($_SESSION['uploadUpd']); //remove session
+          }
+
+          if(isset($_SESSION['failedRemove'])){
+            echo $_SESSION['failedRemove'];  
+            unset($_SESSION['failedRemove']); //remove session
+          }
         ?>
         </br>
         </br>

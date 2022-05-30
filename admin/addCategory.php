@@ -107,5 +107,5 @@ if(isset($_POST['submit'])){
         header("location:".URL.'admin/addCategory.php');
     }
 
-}
+
 ?>

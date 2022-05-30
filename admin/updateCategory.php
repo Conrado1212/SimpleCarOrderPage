@@ -49,11 +49,12 @@
                         }else{
                           echo "<div class='submit-btn'>Image not found</div>";
                         }
-                        ?>  </td>
-              <h2 > Featured</h2><input type="radio"  name="featured" values="YES" >Yes
-              <input type="radio"  name="featured" values="No" >No 
-              <h2 > Active</h2><input type="radio"  name="active" values="YES" >Yes
-              <input type="radio"  name="active" values="No" >No 
+                        ?>  </td></br>
+                        <input type="file" class="input-field" name="name"  >
+              <h2 > Featured</h2><input <?php if($featured == "on"){echo "checked";} ?> type="radio"  name="featured" values="on" >On
+              <input <?php if($featured == "No"){echo "checked";} ?>  type="radio"  name="featured" values="off" >off 
+              <h2 > Active</h2><input <?php if($active == "on"){echo "checked";} ?>  type="radio"  name="active" values="on" >On
+              <input <?php if($active == "No"){echo "checked";} ?> type="radio"  name="active" values="off" >off 
               </br></br> <button type="submit" name="submit" value="upd category" class="submit-btn2">Update category</button>
 
         </form>
@@ -71,9 +72,60 @@ if(isset($_POST['submit'])){
     $featured=$_POST['featured'];
     $active=$_POST['active'];
 
-    $sql ="UPDATE  category set
+    if(isset($_FILES['name']['name'])){
+
+        $name=$_FILES['name']['name'];
+
+
+        if($name!=""){
+
+
+            $rename = end(explode('.', $name));
+
+
+            $name = "Car_category".rand(000, 999).'.'.$rename;
+
+            $source_path = $_FILES['name']['tmp_name'];
+
+            $destination_path ="../img/category/".$name;
+
+            $upload = move_uploaded_file($source_path, $destination_path);
+
+            if($upload == false){
+                $_SESSION['uploadUpd'] = '<div class="submit-btn">Upload failed</div>';
+                header("location:".URL.'admin/category.php');
+
+                die();
+            }
+            
+            if($name !=""){
+                $remove_path = "../img/category/".$name;
+
+
+                $remove = unlink($remove_path);
+    
+                if($remove==false){
+                    $_SESSION['failedRemove'] = '<div class="submit-btn">Upload failed</div>';
+                    header("location:".URL.'admin/category.php');
+    
+                    die();
+                }
+            }
+           
+        }else{
+
+
+            $name = $name;
+        }
+
+
+    }else{
+        $name = $name;
+    }
+
+
+    $sql2 ="UPDATE  category set
     title='$title',
-    name = '$name',
     featured = '$featured',
     active = '$active',
     where categoryId='$categoryId'
@@ -81,9 +133,9 @@ if(isset($_POST['submit'])){
 
 
    
-$res = mysqli_query($conn, $sql); //save data in database
+$res2 = mysqli_query($conn, $sql2); //save data in database
 
-if($res==TRUE){
+if($res2==TRUE){
     $_SESSION['updCat'] = '<div class="submit-btn2">Upd successfully </div>';
 
     header("location:".URL.'admin/category.php');
