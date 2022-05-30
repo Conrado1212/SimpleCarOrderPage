@@ -55,7 +55,19 @@
                     <tr class="active-row">
                     <td><?php echo $categoryId; ?></td>
                         <td><?php echo $title; ?></td>
-                        <td><?php echo $name; ?></td>
+                        <td>
+                        <?php 
+                        if($name!=""){
+                          ?>
+                          <img src="<?php echo URL; ?>img/<?php echo $name; ?>">
+
+                          <?php
+
+                        }else{
+                          echo "<div class='submit-btn'>Image not found</div>";
+                        }
+                        ?>
+                       </td>
                         <td><?php echo $featured; ?></td>
                         <td><?php echo $active; ?></td>
                         <td>
