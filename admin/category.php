@@ -71,8 +71,8 @@
                         <td><?php echo $featured; ?></td>
                         <td><?php echo $active; ?></td>
                         <td>
-                        <a href="updateCategory.php?userId=<?php echo $userId;?>" class="submit-btn2"> Update category</a>
-                        <a href="deleteCategory.php?userId=<?php echo $categoryId;?>" class="submit-btn3"> Delete category</a>
+                        <a href="updateCategory.php?categoryId=<?php echo $categoryId;?>" class="submit-btn2"> Update category</a>
+                        <a href="deleteCategory.php?categoryId=<?php echo $categoryId;?>" class="submit-btn3"> Delete category</a>
                         </td>
                     </tr>
                 </tbody>
