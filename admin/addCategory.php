@@ -1,0 +1,76 @@
+<?php include('part/menu.php'); ?>
+<section class="categories">
+    <div class="conteiner">
+        <div class="form-box2">
+        <div class="button-box">
+        <h2 class="submit-btn">AddCategory</h2>
+        </div>
+        
+        <?php
+          if(isset($_SESSION['addCat'])){
+            echo $_SESSION['addCat'];  
+            unset($_SESSION['addCat']); //remove session
+          }
+        ?>
+
+        <form action="" method="POST" class="input-group">
+              <input type="text" class="input-field" name="title" placeholder="Your title" required>
+              <input type="text" class="input-field" name="name" placeholder="Your name" required>
+              <h2 > Featured</h2><input type="radio"  name="featured" values="YES" >Yes
+              <input type="radio"  name="featured" values="No" >No 
+              <h2 > Active</h2><input type="radio"  name="active" values="YES" >Yes
+              <input type="radio"  name="active" values="No" >No 
+        </br></br> <button type="submit" name="submit" value="Add category" class="submit-btn">Add Category</button>
+
+        </form>
+            </div>
+        <div class="clear">
+        </div>
+</div>
+</section>
+<?php include('part/social.php'); ?>
+<?php include('part/footer.php'); ?>
+<?php
+if(isset($_POST['submit'])){
+    $title=$_POST['title'];
+    $name=$_POST['name'];
+
+
+    if(isset($_POST['featured'])){
+        $featured=$_POST['featured'];
+
+    }else{
+        $featured="No";
+    }
+   
+    if(isset($_POST['active'])){
+        $active=$_POST['active'];
+
+    }else{
+        $active="No";
+    }
+    
+
+
+    $sql ="INSERT INTO category set
+    title='$title',
+    name = '$name',
+    featured = '$featured',
+    active = '$active'
+    ";
+
+    
+    $res = mysqli_query($conn, $sql) or die(mysqli_error()); //save data in database
+
+    if($res==TRUE){
+        $_SESSION['addCat'] = '<div class="submit-btn">Added successfully</div>';
+
+        header("location:".URL.'admin/category.php');
+    }else{
+        $_SESSION['addCat'] = '<div class="submit-btn">Added fialed</div>';
+
+        header("location:".URL.'admin/addCategory.php');
+    }
+
+}
+?>
