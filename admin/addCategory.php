@@ -13,9 +13,9 @@
           }
         ?>
 
-        <form action="" method="POST" class="input-group" enctype="multipart/formData">
+        <form action="" method="POST" class="input-group" enctype="multipart/form-data">
               <input type="text" class="input-field" name="title" placeholder="Your title" required>
-              <input type="file" class="input-field" name="name" placeholder="Your name" required>
+              <input type="file" class="input-field" name="name"  >
               <h2 > Featured</h2><input type="radio"  name="featured" values="YES" >Yes
               <input type="radio"  name="featured" values="No" >No 
               <h2 > Active</h2><input type="radio"  name="active" values="YES" >Yes
@@ -58,11 +58,11 @@ if(isset($_POST['submit'])){
     $rename = end(explode('.', $name));
 
 
-    $name = "Car_category".rand(000, 999).'.'$rename;
+    $name = "Car_category".rand(000, 999).'.'.$rename;
 
     $source_path = $_FILES['name']['tmp_name'];
 
-    $destination_path ="../img".$name;
+    $destination_path ="../img/category/".$name;
 
     $upload = move_uploaded_file($source_path, $destination_path);
 

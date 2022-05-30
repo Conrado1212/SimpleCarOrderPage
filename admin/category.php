@@ -23,6 +23,8 @@
         ?>
         </br>
         </br>
+        </br>
+        </br>
         <a href="addCategory.php" class="submit-btn">Add Category</a>
         <div class="form-box2">
         <table class="button-box2">
@@ -59,9 +61,10 @@
                         <?php 
                         if($name!=""){
                           ?>
-                          <img src="<?php echo URL; ?>img/<?php echo $name; ?>">
+                          <img src="<?php echo URL; ?>img/category/<?php echo $name; ?>" width="100px" >
 
                           <?php
+                          
 
                         }else{
                           echo "<div class='submit-btn'>Image not found</div>";
@@ -72,7 +75,7 @@
                         <td><?php echo $active; ?></td>
                         <td>
                         <a href="updateCategory.php?categoryId=<?php echo $categoryId;?>" class="submit-btn2"> Update category</a>
-                        <a href="deleteCategory.php?categoryId=<?php echo $categoryId;?>" class="submit-btn3"> Delete category</a>
+                        <a href="deleteCategory.php?categoryId=<?php echo $categoryId;?> & name=<?php echo $name; ?>" class="submit-btn3"> Delete category</a>
                         </td>
                     </tr>
                 </tbody>
