@@ -5,63 +5,91 @@
         <div class="button-box">
         <h2 class="submit-btn">Your cars</h2>
         </div>
+        <?php
+          if(isset($_SESSION['addCar'])){
+            echo $_SESSION['addCar'];  
+            unset($_SESSION['addCar']); //remove session
+          }
+        ?>
+         </br>
+        </br>
+        </br>
+        </br>
         <a href="#" class="submit-btn">Add car</a>
         <div class="form-box2">
         <table class="button-box2">
                 <thead>
                 <tr>
-                    <th>userId</th>
-                    <th>userName</th>
-                    <th>password</th>
-                    <th>fullName</th>
-                    <th>email</th>
-                    <th>phone</th>
-                    <th>Address</th>
+                    <th>carId</th>
+                    <th>nameCar</th>
+                    <th>img_name</th>
+                    <th>categoryId</th>
+                    <th>featured</th>
+                    <th>active</th>
+                    <th>descCar</th>
+                    <th>price</th>
                     <th>Action</th>
                 </tr>
                 </thead>
+                <?php
+                $sql = "SELECT * FROM car";
+
+                $res = mysqli_query($conn, $sql) or die(mysqli_error()); //save data in database
+                if($res==TRUE){
+                  $rows = mysqli_num_rows($res);
+
+                  if($rows>0){
+                      while($rows=mysqli_fetch_assoc($res)){
+                        $carId=$rows['carId'];
+                        $nameCar=$rows['nameCar'];
+                        $img_name=$rows['img_name'];
+                        $featured=$rows['featured'];
+                        $active=$rows['active'];
+                        $descCar=$rows['descCar'];
+                        $price=$rows['price'];
+                ?>
                 <tbody>
 
                     <tr class="active-row">
-                        <td>1</td>
-                        <td>xd</td>
-                        <td>12132434</td>
-                        <td>132435454565</td>
-                        <td>@</td>
-                        <td>9999000000</td>
-                        <td>dasgdfthgjkhljk</td>
+                        <td><?php echo $carId?></td>
+                        <td><?php echo $nameCar?></td>
                         <td>
-                        <a href="#" class="submit-btn2"> Update car</a>
-                        <a href="#" class="submit-btn3"> Delete car</a>
+                            <?php 
+                            if($img_name!=""){
+                                ?>
+                                <img src="<?php echo URL; ?>img/car/<?php echo $img_name; ?>" width="100px" >
+      
+                                <?php
+                                
+      
+                              }else{
+                                echo "<div class='submit-btn'>Image not found</div>";
+                              }
+                        ?>
+                        </td>
+                        <td><?php echo $featured?></td>
+                        <td><?php echo $active?></td>
+                        <td><?php echo $descCar?></td>
+                        <td><?php echo $price?></td>
+                        <td>
+                        <a href="updateCar.php?carId=<?php echo carId;?>" class="submit-btn2"> Update car</a>
+                        <a href="deleteCar.php?carId=<?php echo carId;?>& name=<?php echo $img_name; ?>" class="submit-btn3"> Delete car</a>
                         </td>
                     </tr>
-                    <tr class="active-row">
-                        <td>2</td>
-                        <td>xd</td>
-                        <td>12132434</td>
-                        <td>132435454565</td>
-                        <td>@</td>
-                        <td>9999000000</td>
-                        <td>dasgdfthgjkhljk</td>
-                        <td>
-                        <a href="#" class="submit-btn2"> Update car</a>
-                        <a href="#" class="submit-btn3"> Delete car</a>
-                        </td>
-                    </tr>
-                    <tr class="active-row">
-                        <td>3</td>
-                        <td>xd</td>
-                        <td>12132434</td>
-                        <td>132435454565</td>
-                        <td>@</td>
-                        <td>9999000000</td>
-                        <td>dasgdfthgjkhljk</td>
-                        <td>
-                        <a href="#" class="submit-btn2"> Update car</a>
-                        <a href="#" class="submit-btn3"> Delete car</a>
-                        </td>
-                    </tr>
+                  
                 </tbody>
+
+                <?php
+                        }
+                    }else{
+
+                    }
+                }else{
+                   
+                }
+
+                 ?>
+
             </table>
             </div>
         <div class="clear">
