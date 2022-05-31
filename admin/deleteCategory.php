@@ -18,7 +18,7 @@ if(isset($_GET['categoriId']) and isset($_GET['name'])){
         if($remove ==false){
 
             $_SESSION['delImg'] = '<div class="submit-btn3">deleted failed </div>';
-            header("location:".URL.'admin/deleteCSategory.php');
+            header("location:".URL.'admin/deleteCategory.php');
 
             die();
         }
