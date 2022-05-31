@@ -15,7 +15,7 @@
         </br>
         </br>
         </br>
-        <a href="#" class="submit-btn">Add car</a>
+        <a href="addCar.php" class="submit-btn">Add car</a>
         <div class="form-box2">
         <table class="button-box2">
                 <thead>
@@ -43,16 +43,16 @@
                         $carId=$rows['carId'];
                         $nameCar=$rows['nameCar'];
                         $img_name=$rows['img_name'];
+                        $categoryId=$rows['categoryId'];
                         $featured=$rows['featured'];
                         $active=$rows['active'];
                         $descCar=$rows['descCar'];
                         $price=$rows['price'];
                 ?>
                 <tbody>
-
                     <tr class="active-row">
-                        <td><?php echo $carId?></td>
-                        <td><?php echo $nameCar?></td>
+                        <td><?php echo $carId;?></td>
+                        <td><?php echo $nameCar;?></td>
                         <td>
                             <?php 
                             if($img_name!=""){
@@ -67,16 +67,16 @@
                               }
                         ?>
                         </td>
-                        <td><?php echo $featured?></td>
-                        <td><?php echo $active?></td>
-                        <td><?php echo $descCar?></td>
-                        <td><?php echo $price?></td>
+                        <td><?php echo $categoryId;?></td>
+                        <td><?php echo $featured;?></td>
+                        <td><?php echo $active;?></td>
+                        <td><?php echo $descCar;?></td>
+                        <td><?php echo $price;?></td>
                         <td>
-                        <a href="updateCar.php?carId=<?php echo carId;?>" class="submit-btn2"> Update car</a>
-                        <a href="deleteCar.php?carId=<?php echo carId;?>& name=<?php echo $img_name; ?>" class="submit-btn3"> Delete car</a>
+                        <a href="updateCar.php?carId=<?php echo $carId;?>" class="submit-btn2"> Update car</a>
+                        <a href="deleteCar.php?carId=<?php echo $carId;?> & img_name=<?php echo $img_name; ?>" class="submit-btn3"> Delete car</a>
                         </td>
                     </tr>
-                  
                 </tbody>
 
                 <?php

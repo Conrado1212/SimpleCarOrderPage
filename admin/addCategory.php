@@ -54,7 +54,7 @@ if(isset($_POST['submit'])){
 
     $name=$_FILES['name']['name'];
 
-    if($name!=""){
+        if($name!=""){
 
     
 
@@ -76,8 +76,7 @@ if(isset($_POST['submit'])){
 
                 die();
             }
-}
-    }else{
+        }else{
         $_SESSION['upload'] = '<div class="submit-btn">Upload successfully</div>';
         header("location:".URL.'admin/category.php');
     }
@@ -107,5 +106,5 @@ if(isset($_POST['submit'])){
         header("location:".URL.'admin/addCategory.php');
     }
 
-
+}
 ?>
