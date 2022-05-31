@@ -11,6 +11,31 @@
             unset($_SESSION['addCar']); //remove session
           }
         ?>
+
+<?php
+          if(isset($_SESSION['delCar'])){
+            echo $_SESSION['delCar'];  
+            unset($_SESSION['delCar']); //remove session
+          }
+        ?>
+
+<?php
+          if(isset($_SESSION['delImg'])){
+            echo $_SESSION['delImg'];  
+            unset($_SESSION['delImg']); //remove session
+          }
+        ?>
+
+
+<?php
+          if(isset($_SESSION['updCar'])){
+            echo $_SESSION['updCar'];  
+            unset($_SESSION['updCar']); //remove session
+          }
+        ?>
+
+
+
          </br>
         </br>
         </br>
