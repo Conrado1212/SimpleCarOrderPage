@@ -20,19 +20,22 @@ include('part/menu.php');
                     <a href="types.html">
                     <div class="box">
                         <?php 
-                        if($name!=""){
-                            echo "<div class="submit-btn">Not image found</div>";
+                        if($name==""){
+                            echo "<div class='submit-btn'>Not image found</div>";
+                        }else{
+                            ?>
+                                <img src="<?php echo URL; ?>img/category/<?php echo $name;?>" alt="hachback" class="img-resp img-curve">
+                            <?php
                         }
                         ?>
-                    <img src="<?php echo URL; ?>img/category<?php echo $name;?>" alt="hachback" class="img-resp img-curve">
-                     <h3>Hachback</h3>
+                     <h3><?php echo $title ;?></h3>
                     </div>
                     </a>
 
                     <?php
                 }
             }else{
-             echo  "<div class="submit-btn">Error no data</div>";
+             echo  "<div class='submit-btn'>Error no data</div>";
             }
         ?>
         <div class="clear">
