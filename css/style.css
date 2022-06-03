@@ -269,6 +269,9 @@ fieldset{
     margin-top: 2%;;
     padding: 5% 0;
 }
+.search a{
+    color: goldenrod;
+}
 /*mobile */
 @media only screen and (max-width:768px){
     .logo{

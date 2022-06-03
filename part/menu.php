@@ -19,7 +19,7 @@
            <span style="color: #808080">Electric</span>OrderApp.com
        </div>
        <div class="menu">
-        <form class="inputek" action="">
+        <form class="inputek" action="cars-search.php" method="POST">
             <input type="search"  class="input-field" name="search" placeholder="Type car ...." required>
             <button type="submit" class="submit-btn">Search</button>
         </form>
