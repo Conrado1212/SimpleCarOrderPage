@@ -17,7 +17,7 @@ include('part/menu.php');
                     $title=$rows['title'];
                     $name=$rows['name'];
                     ?>
-                    <a href="types-cars.php">
+                    <a href="types-cars.php?categoryId=<?php echo $categoryId;?>">
                     <div class="box">
                         <?php 
                         if($name==""){

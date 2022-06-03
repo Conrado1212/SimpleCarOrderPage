@@ -7,7 +7,7 @@
 
 
         ?>
-        <h2 >You are search for <a href="" class="submit-btn">"<?php echo $search;?>"</a></h2>
+        <h2 >You are search for <a href="" class="submit-btn">"<?php echo $search;?></a></h2>
     <div class="clear">
 
 </div>
