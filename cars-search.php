@@ -2,8 +2,10 @@
 <section class="categories">
     <div class="conteiner">
         <?php
+           // $search = $_POST['search'];
+            $search = mysqli_real_escape_string($conn,$_POST['search']);
 
-            $search = $_POST['search'];
+
 
 
         ?>

@@ -191,6 +191,21 @@ a{
     background: linear-gradient(to right, blue, #000000);
    
 }
+.submit-btn5{
+    padding: 10px 30px;
+    cursor: pointer;
+    display: inline;
+    margin: auto;
+    background: linear-gradient(to right, #000000, 	green);
+    border:0;
+    outline:none;
+    border-radius: 30px;
+    color:#fff;
+}
+.submit-btn5:hover{
+    background: linear-gradient(to right, green, #000000);
+   
+}
 .input-field{
     width:50%;
     padding: 10px 0;
@@ -226,13 +241,41 @@ h2{
     background-position: center;
 }
 .box{
-   
     width: 30%;
     display: inline;
     float: left;
     margin: 1%;
     text-align: center;
     position: relative;
+}
+.boxy{
+    border: 2px solid black;
+    border-radius: 8px;
+    width: 18%;
+    display: inline;
+    float: left;
+    text-align: center;
+    position: relative;
+    padding: 2% ;
+    background-image: url(../img/categoryBack.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin-left: 2%;
+
+}
+.boxy:hover{
+    background-color: darkgrey;
+    
+}
+.cat{
+
+}
+.cat:hover{
+    color: #000000;
+    font-weight: bold;
+    font-size:large;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 h3{
     position: absolute;

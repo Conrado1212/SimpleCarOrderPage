@@ -32,12 +32,20 @@
 <?php include('part/footer.php'); ?>
 <?php
 if(isset($_POST['submit'])){
-    $userName=$_POST['userName'];
-    $password=md5($_POST['password']); //encrypting password
-    $fullName=$_POST['fullName'];
-    $email=$_POST['email'];
-    $phone=$_POST['phone'];
-    $address=$_POST['address'];
+
+
+    //$userName=$_POST['userName'];
+    $userName=mysqli_real_escape_string($conn,$_POST['userName']);
+    //$password=md5($_POST['password']); //encrypting password
+
+    $password1=md5($_POST['password']);
+
+    $password=mysqli_real_escape_string($conn,$password1); 
+
+    $fullName=mysqli_real_escape_string($conn,$_POST['fullName']);
+    $email=mysqli_real_escape_string($conn,$_POST['email']);
+    $phone=mysqli_real_escape_string($conn,$_POST['phone']);
+    $address=mysqli_real_escape_string($conn,$_POST['address']);
 
 
     $sql ="INSERT INTO user set

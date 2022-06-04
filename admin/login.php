@@ -58,8 +58,11 @@
 <?php include('part/footer.php'); ?>
 <?php
 if(isset($_POST['submit'])){
-    $userName=$_POST['userName']; 
-    $password=md5($_POST['password']); 
+    //$userName=$_POST['userName']; 
+    $userName=mysqli_real_escape_string($conn,$_POST['userName']); 
+    //$password=md5($_POST['password']); 
+    $password1 = md5($_POST['password']);
+    $password=mysqli_real_escape_string($conn,$password1); 
 
 
     $sql ="SELECT * from  user 

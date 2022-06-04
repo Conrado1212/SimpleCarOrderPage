@@ -25,7 +25,6 @@
         </br>
         </br>
         </br>
-        <a href="addBuy.php" class="submit-btn">Add buy</a>
         <div class="form-box2">
         <table class="button-box2">
                 <thead>
@@ -68,7 +67,19 @@
                        <td><?php echo $carId;?></td>
                        <td><?php echo $quantity;?></td>
                        <td><?php echo $total;?></td>
-                       <td><?php echo $status;?></td>
+                       <td>
+                         <?php if($status=="Bought"){
+                            echo "<div class='submit-btn'>$status</div>";
+                         }elseif($status=="On delivery"){
+                          echo "<div class='submit-btn4'>$status</div>";
+                         }elseif($status=="Delivered"){
+                          echo "<div class='submit-btn2'>$status</div>";
+                         }elseif($status=="Cancelled"){
+                          echo "<div class='submit-btn3'>$status</div>";
+                         }
+                         
+                         ?>
+                        </td>
                        <td><?php echo $order_date;?></td>
                        <td><?php echo $userId;?></td>
                        <td>
