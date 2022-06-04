@@ -65,10 +65,10 @@
 <?php include('part/footer.php'); ?>
 <?php
 if(isset($_POST['submit'])){
-    $nameCar=$_POST['nameCar'];
-    $categoryId=$_POST['categoryId'];
-    $descCar=$_POST['descCar'];
-    $price=$_POST['price'];
+    $nameCar=mysqli_real_escape_string($conn,$_POST['nameCar']);
+    $categoryId=mysqli_real_escape_string($conn,$_POST['categoryId']);
+    $descCar=mysqli_real_escape_string($conn,$_POST['descCar']);
+    $price=mysqli_real_escape_string($conn,$_POST['price']);
     
     
 
