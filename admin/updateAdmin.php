@@ -13,10 +13,12 @@ if(isset($_SESSION['upd'])){
     unset($_SESSION['upd']); //remove session
   }
 
+            if(isset($_GET['userId'])){
 
+                
                 $userId = $_GET['userId'];
 
-                $sql ="SELECT * from user ";
+                $sql ="SELECT * from user where userId=$userId ";
 
                 $res = mysqli_query($conn, $sql);
 
@@ -39,6 +41,10 @@ if(isset($_SESSION['upd'])){
                    
                     header("location:".URL.'admin/manage.php');
                 }
+
+            }else{
+                header("location:".URL.'admin/manage.php');
+            }
         ?>
 
         <form action="" method="POST" class="input-group">

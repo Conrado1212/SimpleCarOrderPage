@@ -107,7 +107,7 @@ span{
     background-color: #292929;
     margin-left: auto;
     margin-right: auto;
-    padding: 1%;
+    
 }
 a{  
     color: white;
@@ -203,11 +203,12 @@ a{
     background: transparent;
     transition: all 0.2s linear;
     border-radius: 6px;
+    text-align: center;
 }
 input:is(:focus, :valid) {
     border-color: white;
-    color: white;
-    font-size: 12px;
+    color: black;;
+    font-size: 16px;
     font-weight: 600;
     top: 0;
 }
@@ -373,6 +374,25 @@ fieldset{
     color: #d94348;
     font-size: 20px;
     font-weight: bold;
+}
+select{
+    border: 1px solid black;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+    width: 20%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1%;
+    background-image: url(../img/status.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: white;;
+    font-size: 18px;
+}
+.buyOption{
+    background-color: #C0C0C0;
 }
 
 /*mobile */
