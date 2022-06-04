@@ -46,7 +46,7 @@
                        <h4><?php echo $nameCar ;?></h4>
                        <p class="engine"><?php echo $descCar ;?></p>
                        <p class="price"><?php echo $price ;?></p>
-                       <button onclick="location.href='buy.php'" type="submit" class="submit-btn">Buy</button>
+                       <button onclick="location.href='buy.php?carId=<?php echo $carId;?>'" type="submit" class="submit-btn">Buy</button>
                    </div>
                </div>
               

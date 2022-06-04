@@ -15,7 +15,9 @@
     <nav>
         <div class="conteiner">
        <div class="logo">
+       <a href="index.php">
            <img src="img/logo_ccexpress.png" alt="Car logo" class="img-resp">
+           </a>
            <span style="color: #808080">Electric</span>OrderApp.com
        </div>
        <div class="menu">

@@ -131,7 +131,6 @@ a{
     text-align: center;
 }
 .submit-btn{
-    width:7%;
     padding: 10px 30px;
     cursor: pointer;
     display: inline;
@@ -228,11 +227,11 @@ h3{
 }
 .engine{
     margin: 1% 0;
-    font-size: 14px;
+    font-size: 18px;
 }
 .price{
     margin: 1% 0;
-    font-size: 14px;
+    font-size: 18px;
     color: goldenrod;
 }
 h4{
@@ -272,6 +271,15 @@ fieldset{
 .search a{
     color: goldenrod;
 }
+input.resp-input{
+    border: 2px solid  black;
+    border-radius: 8px;
+    padding: 2%;
+    color:black;
+    margin-bottom: 10%;
+    width: 70%;
+}
+
 /*mobile */
 @media only screen and (max-width:768px){
     .logo{
