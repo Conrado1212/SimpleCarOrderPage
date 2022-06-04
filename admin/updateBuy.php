@@ -46,17 +46,17 @@ if(isset($_SESSION['updBuy'])){
         ?>
 
         <form action="" method="POST" class="input-group">
-              <input type="text" class="input-field" name="carId" value="<?php echo $carId;?>"  required>
-              <input type="number" class="input-field" name="quantity" value="<?php echo $quantity;?>">
-              <input type="text" class="input-field" name="total" value="<?php echo $total;?>"  required></br></br>
-              <h2 class="submit-btn">Your status</h2><select name="status">
-                  <option class="buyOption" value="Bought">Bought</option>
-                  <option class="buyOption" value="On delivery">On delivery</option>
-                  <option class="buyOption" value="Delivered">Delivered</option>
-                  <option class="buyOption" value="Cancelled">Cancelled</option>
+        <h1 class="submit-btn">Your carId</h1></br></br><input type="text" class="input-field" name="carId" value="<?php echo $carId;?>"  required></br></br>
+              <h1 class="submit-btn">Your quantity</h1> </br></br><input type="number" class="input-field" name="quantity" value="<?php echo $quantity;?>"></br></br>
+              <h1 class="submit-btn">Your status</h1><select name="status">
+                  <option class="buyOption" <?php if($status=="Bought"){echo "selected";} ;?> value="Bought">Bought</option>
+                  <option class="buyOption" <?php if($status=="On delivery"){echo "selected";} ;?> value="On delivery">On delivery</option>
+                  <option class="buyOption" <?php if($status=="Delivered"){echo "selected";} ;?> value="Delivered">Delivered</option>
+                  <option class="buyOption" <?php if($status=="Cancelled"){echo "selected";} ;?> value="Cancelled">Cancelled</option>
               </select>
-            </br></br> <input type="text" class="input-field" name="order_date" value="<?php echo $order_date;?>"  required>
-              <input type="number" class="input-field" name="userId" value="<?php echo $userId;?>" placeholder="Your userId" required><br>
+              <input type="hidden" name="price" value="<?php echo $price=$total/$quantity;?>">
+            </br></br> <h1 class="submit-btn">Your order_date</h1> </br></br><input type="text" class="input-field" name="order_date" value="<?php echo $order_date;?>"  required></br></br>
+            <h1 class="submit-btn">Your userId</h1></br></br><input type="number" class="input-field" name="userId" value="<?php echo $userId;?>" placeholder="Your userId" required><br>
               <button type="submit" name="submit" value="upd buy" class="submit-btn2">Update buy</button>
 
         </form>
@@ -71,7 +71,8 @@ if(isset($_SESSION['updBuy'])){
 if(isset($_POST['submit'])){
     $carId=$_POST['carId'];
     $quantity=$_POST['quantity'];
-    $total=$_POST['total'];
+    $price=$_POST['price'];
+    $total=$price*$quantity;
     $status=$_POST['status'];
     $order_date=$_POST['order_date'];
     $userId=$_POST['userId'];
@@ -79,10 +80,10 @@ if(isset($_POST['submit'])){
     $sql2 ="UPDATE  buy set
     carId='$carId',
     quantity = '$quantity',
-    userId = '$userId',
     total = '$total',
     status = '$status',
-    order_date = '$order_date' 
+    order_date = '$order_date',
+    userId = '$userId'
     where buyId='$buyId'
     ";
 
