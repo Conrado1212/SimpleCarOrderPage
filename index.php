@@ -1,6 +1,13 @@
 <?php
 include('part/menu.php');
 ?>
+
+<?php
+          if(isset($_SESSION['addBuy'])){
+            echo $_SESSION['addBuy'];  
+            unset($_SESSION['addBuy']); //remove session
+          }
+          ?>
 <section class="categories">
     <div class="conteiner">
         <h2 >Cars menu</h2>

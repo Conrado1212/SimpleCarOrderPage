@@ -41,7 +41,7 @@
             <div class="button-box">
                 <h4 class="submit-btn">Fill this field to gey your dream car</h4>
             </div>
-        <form action="" class="input-group" method="POST">
+        <form action="" method="POST" class="input-group" >
                 <?php 
                 
                 if($img_name==""){
@@ -58,30 +58,56 @@
 
                  <div class="desc">
                     <h4><?php echo $nameCar;?></h4>
+                    <input type="hidden" name="carId" value="<?php echo $carId;?>">
                     <p class="engine"><?php echo $descCar;?></p>
                     <p class="price"><?php echo $price;?></p>
-                   
-                        <input type="number" name="qty" class="resp-input" value="1" required>
+
+                    <input type="hidden" name="price" value="<?php echo $price;?>">
+
+                        <input type="number" name="quantity" class="resp-input" value="1" >
                     
                 </div>
                 
-              </br></br><input type="text" class="input-field" placeholder="Your  name" required>
-              <input type="tel" class="input-field" placeholder="Your phone " required>
-              <input type="email" class="input-field" placeholder="Your email" required>
-              <textarea type="address" class="input-field" placeholder="Your address" required></textarea><br>
-              <button type="submit" class="submit-btn">Buy</button>
+              </br></br> <h4 class="submit-btn"> Your userId</h4><input type="number" name="userId" class="input-field" value="1" >
+              <button type="submit" name="submit" value="addBuy" class="submit-btn">Buy</button>
 
         </form>
 
 
 <?php
         if(isset($_POST['submit'])){
+            $carId=$_POST['carId'];
+            $quantity=$_POST['quantity'];
+            $total= $price * $quantity;
+            $status= "Bought";
+            $order_date = date("Y-m-d h:i:sa");
+            $userId=$_POST['userId'];
+
+            $sql2 ="INSERT INTO buy set
+            carId='$carId',
+            quantity = $quantity,
+            total=$total,
+            status = '$status',
+            order_date = '$order_date',
+            userId = '$userId'
+            ";
+
+           // echo $sql2; die();
+
+            $res2 = mysqli_query($conn, $sql2) or die(mysqli_error());
 
 
-        }else{
+            if($res2==TRUE){
+                $_SESSION['addBuy'] = '<div class="submit-btn">Buy successfully</div>';
+        
+                header("location:".URL);
+            }else{
+                $_SESSION['addBuy'] = '<div class="submit-btn">Buy fialed</div>';
+        
+                header("location:".URL);
+            }
 
         }
-
             ?>
     </div>
     </div>
